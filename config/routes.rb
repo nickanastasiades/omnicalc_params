@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 get("/flexible/square/:zebra",{ :controller => "calculations", :action => "flexible_square"})
 get("/flexible/square_root/:root",{ :controller => "calculations", :action => "flexible_square_root"})
+get("/flexible/payment/:alpha/:beta/:gamma",{ :controller => "calculations", :action => "flexible_payment"})
 get("/flexible/square/new",{ :controller => "calculations", :action => "flexible_square_new"})
 get("/flexible/square/results",{ :controller => "calculations", :action => "flexible_square_results"})
 get("/flexible/payment/new",{ :controller => "calculations", :action => "flexible_payment_new"})

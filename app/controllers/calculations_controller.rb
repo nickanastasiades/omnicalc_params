@@ -12,6 +12,16 @@ def flexible_square_root
   render("calculations/flexible_square_root.html.erb")
 end
 
+def flexible_payment
+  @years= params["beta"].to_i
+  @principal= params["gamma"].to_f
+  @apr= params["alpha"].to_f
+  @mpr = @apr/100/100/12
+  @months = @years*12
+  @monthly_payment = (@principal*@mpr)/(1-(1+@mpr)**(-@months))
+  render("calculations/flexible_payment.html.erb")
+end
+
 def flexible_square_new
   @thenumber = params["zebra"].to_f
   @thenumber_squared = @thenumber ** 2
