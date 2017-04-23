@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-get("/flexible/square/5",{ :controller => "calculations", :action => "flexible_square_5"})
-get("/flexible/square/42",{ :controller => "calculations", :action => "flexible_square_42"})
-get("/flexible/square_root/8",{ :controller => "calculations", :action => "square_root_8"})
+get("/flexible/square/:zebra",{ :controller => "calculations", :action => "flexible_square"})
+get("/flexible/square_root/:root",{ :controller => "calculations", :action => "flexible_square_root"})
 get("/flexible/square/new",{ :controller => "calculations", :action => "flexible_square_new"})
 get("/flexible/square/results",{ :controller => "calculations", :action => "flexible_square_results"})
 get("/flexible/payment/new",{ :controller => "calculations", :action => "flexible_payment_new"})

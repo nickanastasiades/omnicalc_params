@@ -1,15 +1,15 @@
 class CalculationsController < ApplicationController
 
-def flexible_square_5
-render("calculations/flexible_square_5.html.erb")
+def flexible_square
+  @thenumber = params["zebra"].to_f
+  @thenumber_squared = @thenumber ** 2
+render("calculations/flexible_square.html.erb")
 end
 
-def flexible_square_42
-render("calculations/flexible_square_42.html.erb")
-end
-
-def square_root_8
-render("calculations/square_root_8.html.erb")
+def flexible_square_root
+  @thenumber = params["root"].to_f
+  @thenumber_root = Math.sqrt(@thenumber)
+  render("calculations/flexible_square_root.html.erb")
 end
 
 def flexible_square_new
