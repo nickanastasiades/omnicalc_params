@@ -22,32 +22,38 @@ def flexible_payment
   render("calculations/flexible_payment.html.erb")
 end
 
-def flexible_square_new
-  @thenumber = params["zebra"].to_f
-  @thenumber_squared = @thenumber ** 2
-render("calculations/flexible_square_new.html.erb")
-end
-
-def flexible_square_results
+def square_new
   @thenumber = params["user_number"].to_f
   @thenumber_squared = @thenumber ** 2
-render("calculations/flexible_square_results.html.erb")
+render("calculations/square_new.html.erb")
 end
 
-def flexible_payment_new
-render("calculations/flexible_payment_new.html.erb")
+def square_results
+  @thenumber = params["user_number"].to_f
+  @thenumber_squared = @thenumber ** 2
+render("calculations/square_results.html.erb")
 end
 
-def flexible_payment_results
-render("calculations/flexible_payment_results.html.erb")
+def payment_new
+render("calculations/payment_new.html.erb")
 end
 
-def flexible_random_new
-render("calculations/flexible_random_new.html.erb")
+def payment_results
+  @years= params["user_years"].to_i
+  @principal= params["user_pv"].to_f
+  @apr= params["user_apr"].to_f
+  @mpr = @apr/100/100/12
+  @months = @years*12
+  @monthly_payment = (@principal*@mpr)/(1-(1+@mpr)**(-@months))
+render("calculations/payment_results.html.erb")
 end
 
-def flexible_random_results_new
-render("calculations/flexible_random_results.html.erb")
+def random_new
+render("calculations/random_new.html.erb")
+end
+
+def random_results_new
+render("calculations/random_results.html.erb")
 end
 
 
